@@ -1,38 +1,37 @@
 describe("Actions", () => {
 
-  it('we define action types as a string', () => {
+  it('we define action types as a string chk1', () => {
     const ADD_TODO = 'ADD_TODO';
-    expect(solveme).toEqual(expect.any(String));
+    expect(ADD_TODO).toEqual(expect.any(String));
   });
 
-  it('actions are serializable objects', () => {
+  it('actions are serializable objects chk2', () => {
     const ADD_TODO = 'ADD_TODO';
     const addTodoAction = {
       type: ADD_TODO,
       text: 'Build my first Redux app',
     };
 
-    expect(solveme).toBeInstanceOf(Object);
+    expect(addTodoAction).toBeInstanceOf(Object);
   });
 
-  it('actions always have a field called type which is a string', () => {
+  it('actions always have a field called type which is a string chk31', () => {
     const TOGGLE_TODO = 'TOGGLE_TODO';
     const toggleTodoAction = {
       type: TOGGLE_TODO,
       index: 5,
     };
 
-    expect(solveme).toMatchObject({type: expect.any(String)});
+    expect(toggleTodoAction).toMatchObject({type: expect.any(String)});
   });
 
-  it('define action creators -aka functions- to create actions', () => {
+  it('define action creators -aka functions- to create actions chk41', () => {
     const ADD_TODO = 'ADD_TODO';
     const addTodo = (text) => ({
       type: ADD_TODO,
       text
     });
-
-    expect(solveme).toMatchObject({type: expect.any(String)});
+    expect(addTodo()).toMatchObject({type: expect.any(String)});
   });
 
 });
